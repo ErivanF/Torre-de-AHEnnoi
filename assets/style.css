@@ -1,0 +1,43 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    color:black;
+    background-color: #ffd8be;
+    height: 100vh;
+}
+h2{
+    text-align: center;
+    margin-top: 1em;
+}
+section{
+    background-color: #ffffb5;
+    height: 80vh;
+    width: 80vw;
+    margin: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    padding: 10px;
+}
+section div{
+    margin: 10px;
+    background-color: #eceae4;
+    height: 100%;
+    width: 100%;
+}
+@media (max-height:500px) {
+    body {
+        display: flex;
+        align-items: center;
+    }
+    section {
+        
+    }
+    h2{
+        display: none;
+    }
+    
+}
+@media (min-width: 768px) {
+
+}

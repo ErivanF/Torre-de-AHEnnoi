@@ -14,7 +14,7 @@ section{
     width: 80vw;
     margin: auto;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     padding: 10px;
@@ -27,6 +27,7 @@ section div{
 }
 @media (max-height:500px) {
     body {
+        flex-direction: row;
         display: flex;
         align-items: center;
     }
@@ -39,5 +40,7 @@ section div{
     
 }
 @media (min-width: 768px) {
-
+    section{
+        flex-direction: row;
+    }
 }

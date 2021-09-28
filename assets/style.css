@@ -23,8 +23,6 @@ section{
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-start;
-}
-section div{
     margin: 10px;
     background-color: #eceae4;
     height: 100%;

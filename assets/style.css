@@ -46,7 +46,12 @@ section{
     display: flex;
     flex-direction: column-reverse;
     justify-content: flex-start;
+    margin: 10px;
+    background-color: #eceae4;
+    height: 100%;
+    width: 100%;
 }
+
 #disco1 {
     margin: 0 auto;
     border-radius: 15px;
@@ -83,21 +88,15 @@ section{
     height: 15%;
 }
 
-section div{
-    margin: 10px;
-    background-color: #eceae4;
-    height: 100%;
-    width: 100%;
-}
 @media (max-height:500px) {
     body {
         flex-direction: row;
         display: flex;
         align-items: center;
     }
-    section {
+    /* section {
         
-    }
+    } */
     h2{
         display: none;
     }

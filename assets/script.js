@@ -1,6 +1,10 @@
-const pino1 = document.getElementById("pino1");
-const pino2 = document.getElementById("pino2");
-const pino3 = document.getElementById("pino3");
+
+const pino1 = document.getElementById("pino1")
+const pino2 = document.getElementById("pino2")
+const pino3 = document.getElementById("pino3")
+let selecionado = false ;
+let pinoAtual = pino1 ;
+
 //Mateus
 const menu = document.querySelector("header");
 const Easy = document.createElement("button");
@@ -82,4 +86,47 @@ function ClearEvent () {
         pino3.lastChild.remove()
     }
 }
+
 //Erivan
+pino1.addEventListener("click",clicaPino)
+pino2.addEventListener("click",clicaPino)
+pino3.addEventListener("click",clicaPino)
+
+function clicaPino (evt){
+    const pino = evt.currentTarget
+    if(!selecionado){
+        if(pino.childElementCount>0){
+            pinoAtual=pino
+            console.log(pinoAtual.id)
+            selecionado = true
+        }
+        else{
+            console.log("Erro")
+        }
+    }
+    else{
+        if(checaJogada(pinoAtual,pino)){
+            console.log(pinoAtual.id,pino.id)
+            moveDisco(pinoAtual,pino)
+            selecionado = false
+        }
+        else{
+            selecionado = false
+            console.log("Erro")
+        }
+    }
+
+}
+function checaJogada(pinoOrigem,pinoDestino){
+    if(pinoDestino.childElementCount===0){
+        return true
+    }
+    if(pinoOrigem.lastChild.clientWidth<pinoDestino.lastChild.clientWidth){
+        return true
+    }
+    return false
+}
+function moveDisco(pinoOrigem,pinoDestino){
+    const disco = pinoOrigem.lastChild
+    pinoDestino.appendChild(disco)
+}

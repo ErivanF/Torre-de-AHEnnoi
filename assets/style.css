@@ -34,7 +34,7 @@ h2{
 section{
     background-color: #ffffb5;
     height: 80vh;
-    width: 80vw;
+    max-width: 360px;
     margin: auto;
     display: flex;
     flex-direction: column;
@@ -102,8 +102,9 @@ section{
     }
     
 }
-@media (min-width: 768px) {
+@media (min-width: 880px) {
     section{
         flex-direction: row;
+        max-width: 900px;
     }
 }

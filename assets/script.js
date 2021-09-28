@@ -97,7 +97,6 @@ function clicaPino (evt){
     if(!selecionado){
         if(pino.childElementCount>0){
             pinoAtual=pino
-            console.log(pinoAtual.id)
             selecionado = true
         }
         else{

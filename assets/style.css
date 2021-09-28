@@ -28,6 +28,43 @@ section{
     height: 100%;
     width: 100%;
 }
+
+#disco1 {
+    margin: 0 auto;
+    border-radius: 15px;
+    width: 85%;
+    background: blue;
+    height: 15%;
+}
+#disco2 {
+    margin: 0 auto;
+    border-radius: 15px;
+    width: 78%;
+    background: red;
+    height: 15%;
+}
+#disco3 {
+    margin: 0 auto;
+    border-radius: 15px;
+    width: 71%;
+    background: cyan;
+    height: 15%;
+}
+#disco4 {
+    margin: 0 auto;
+    border-radius: 15px;
+    width: 64%;
+    background:greenyellow;
+    height: 15%;
+}
+#disco5 {
+    margin: 0 auto;
+    border-radius: 15px;
+    width: 57%;
+    background: green;
+    height: 15%;
+}
+
 @media (max-height:500px) {
     body {
         flex-direction: row;

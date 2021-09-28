@@ -34,9 +34,9 @@ section{
         display: flex;
         align-items: center;
     }
-    section {
+    /* section {
         
-    }
+    } */
     h2{
         display: none;
     }

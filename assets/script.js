@@ -4,6 +4,7 @@ const pino2 = document.getElementById("pino2")
 const pino3 = document.getElementById("pino3")
 let selecionado = false
 let pinoAtual = pino1
+const erro = new Audio("./assets/error.mp3")
 
 //Mateus
 const disco1 = document.createElement("div");
@@ -33,22 +34,20 @@ function clicaPino (evt){
     if(!selecionado){
         if(pino.childElementCount>0){
             pinoAtual=pino
-            console.log(pinoAtual.id)
             selecionado = true
         }
         else{
-            console.log("Erro")
+            erro.play()
         }
     }
     else{
         if(checaJogada(pinoAtual,pino)){
-            console.log(pinoAtual.id,pino.id)
             moveDisco(pinoAtual,pino)
             selecionado = false
         }
         else{
             selecionado = false
-            console.log("Erro")
+            erro.play()
         }
     }
 

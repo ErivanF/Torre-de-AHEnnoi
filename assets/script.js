@@ -6,7 +6,7 @@ let selecionado = false
 let pinoAtual = pino1
 
 //Mateus
-let disco1 = document.createElement("div");
+const disco1 = document.createElement("div");
 disco1.id = "disco1" ;
 pino1.appendChild(disco1);
 const disco2 = document.createElement("div")
@@ -29,32 +29,40 @@ pino2.addEventListener("click",clicaPino)
 pino3.addEventListener("click",clicaPino)
 
 function clicaPino (evt){
+    const pino = evt.currentTarget
     if(!selecionado){
-        pinoAtual=evt.target
-        console.log(pinoAtual.id)
-        selecionado = true
+        if(pino.childElementCount>0){
+            pinoAtual=pino
+            console.log(pinoAtual.id)
+            selecionado = true
+        }
+        else{
+            console.log("Erro")
+        }
     }
     else{
-        console.log(pinoAtual.id,evt.target.id)
-        moveDisco(pinoAtual,evt.target)
-        selecionado = false
+        if(checaJogada(pinoAtual,pino)){
+            console.log(pinoAtual.id,pino.id)
+            moveDisco(pinoAtual,pino)
+            selecionado = false
+        }
+        else{
+            selecionado = false
+            console.log("Erro")
+        }
     }
 
 }
-function testaPino(x){
-    if(!selecionado){
-        pinoAtual=x
-        console.log(pinoAtual.id)
-        selecionado = true
-    }else {
-        console.log(pinoAtual.id,x.id)
-        moveDisco(pinoAtual,x)
-        selecionado = false
+function checaJogada(pinoOrigem,pinoDestino){
+    if(pinoDestino.childElementCount===0){
+        return true
     }
-
-
+    if(pinoOrigem.lastChild.clientWidth<pinoDestino.lastChild.clientWidth){
+        return true
+    }
+    return false
 }
-function moveDisco(pinoAntes,pinoDepois){
-    const disco = pinoAntes.lastChild
-    pinoDepois.appendChild(disco)
+function moveDisco(pinoOrigem,pinoDestino){
+    const disco = pinoOrigem.lastChild
+    pinoDestino.appendChild(disco)
 }

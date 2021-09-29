@@ -33,8 +33,11 @@ button {
 }
 
 h2{
+    color: rgb(233, 17, 17)    ;
     text-align: center;
     margin-top: 1em;
+    font-weight: 900;
+    font-size: 20px;
 }
 section{
     background-color: #ffffb5;
@@ -116,6 +119,10 @@ section{
 
 
 @media (min-width: 880px) {
+    body {
+        background-size: cover;
+        background-position: bottom;
+    }
     section{
         flex-direction: row;
         max-width: 900px;

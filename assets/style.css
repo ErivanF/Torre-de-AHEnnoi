@@ -41,6 +41,7 @@ section{
     height: 80vh;
     max-width: 360px;
     margin: auto;
+    margin-bottom: 50px;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -59,7 +60,9 @@ section{
     border: 1px dotted #666;
     border-radius: 15px;
 }
-
+.pino>img{
+    width: 100%;
+}
 #disco1 {
     margin: 0 auto;
     border-radius: 15px;

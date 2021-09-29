@@ -3,11 +3,13 @@ const pino1 = document.getElementById("pino1")
 const pino2 = document.getElementById("pino2")
 const pino3 = document.getElementById("pino3")
 const contador = document.getElementsByClassName("contador")[0]
+const vitoria =  document.createElement("img")
 let podeMover = true
 let maxDiscos = 3
 let selecionado = false
 let pinoAtual
 let jogadas = 0
+vitoria.setAttribute("src","./assets/img/helltaker-heart.gif")
 const erro = new Audio("./assets/sound/error.mp3")
 const izi = new Audio("./assets/sound/ggizi.mp3")
 const Theme = new Audio("./assets/sound/hellTakerOSTRemix.mp3")
@@ -163,6 +165,7 @@ function moveDisco(pinoOrigem,pinoDestino){
         if(pino3.childElementCount===maxDiscos){
             Theme.pause()
             izi.play()
+            pino2.appendChild(vitoria)
         }
     
 }

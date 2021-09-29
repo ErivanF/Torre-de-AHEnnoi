@@ -14,7 +14,7 @@ const erro = new Audio("./assets/sound/error.mp3")
 const izi = new Audio("./assets/sound/ggizi.mp3")
 const Theme = new Audio("./assets/sound/hellTakerOSTRemix.mp3")
 Theme.play();
-Theme.volume = 0.02;
+Theme.volume = 0.1;
 //Mateus
 const menu = document.querySelector("header");
 const Easy = document.createElement("button");

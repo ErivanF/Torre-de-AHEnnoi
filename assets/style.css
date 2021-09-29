@@ -1,8 +1,12 @@
+
 body{
     font-family: Arial, Helvetica, sans-serif;
     color:black;
     background-color: #ffd8be;
     height: 100vh;
+    background-image: url("./img/1082829.png");
+    background-size: auto 100%;
+    background-position:right;
 }
 header {
     display: flex;
@@ -42,6 +46,7 @@ section{
     justify-content: space-around;
     align-items: center;
     padding: 10px;
+    background: none;
 }
 .pino{
     display: flex;
@@ -63,7 +68,6 @@ section{
     height: 15%;
     background-image: url(./img/de7c14b166ce8cb065604b7957b4d01a.gif);
     background-position: center;
-    background-size: 75px 85px;
 }
 #disco2 {
     margin: 0 auto;
@@ -73,7 +77,6 @@ section{
     height: 15%;
     background-image: url(./img/5c887b98b2e06f51d91a5b639fd7219b.gif);
     background-position: center;
-    background-size: 75px 85px;
 }
 #disco3 {
     margin: 0 auto;
@@ -83,7 +86,6 @@ section{
     height: 15%;
     background-image: url(./img/lucifer-helltaker.gif);
     background-position: center;
-    background-size: 66px 85px;
 }
 #disco4 {
     margin: 0 auto;
@@ -93,7 +95,6 @@ section{
     height: 15%;
     background-image: url(./img/helltaker-vanripper.gif);
     background-position: center;
-    background-size: 62px 85px;
 }
 #disco5 {
     margin: 0 auto;
@@ -103,26 +104,21 @@ section{
     height: 15%;
     background-image: url(./img/helltaker-vanripper\ \(1\).gif);
     background-position: right;
-    background-size: 78px 85px;
+}
+#disco1, #disco2, #disco3, #disco4, #disco5 {
+    background-size: 9% 100%;
+    border: solid 2px rgb(36, 1, 1);
 }
 
-@media (max-height:500px) {
-    body {
-        flex-direction: row;
-        display: flex;
-        align-items: center;
-    }
-    /* section {
-        
-    } */
-    h2{
-        display: none;
-    }
-    
-}
+
+
 @media (min-width: 880px) {
     section{
         flex-direction: row;
         max-width: 900px;
+    }
+    #disco1, #disco2, #disco3, #disco4, #disco5 {
+        background-size: 75px 85px;
+        border: solid 2px rgb(36, 1, 1);
     }
 }

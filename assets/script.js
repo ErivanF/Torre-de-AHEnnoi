@@ -10,7 +10,9 @@ let pinoAtual
 let jogadas = 0
 const erro = new Audio("./assets/sound/error.mp3")
 const izi = new Audio("./assets/sound/ggizi.mp3")
-
+const Theme = new Audio("./assets/sound/hellTakerOSTRemix.mp3")
+Theme.play()
+Theme.volume = 0.01;
 //Mateus
 const menu = document.querySelector("header");
 const Easy = document.createElement("button");
@@ -82,6 +84,7 @@ Clear.id = "Clear";
 Clear.innerText = "Reset";
 Clear.addEventListener("click",Reset);
 function Reset(){
+    Theme.play()
     ClearEvent()
     if(maxDiscos===5){
         HardEvent()
@@ -110,6 +113,7 @@ function ClearEvent () {
     jogadas = 0
     contador.innerText=jogadas
 }
+
 
 //Erivan
 pino1.addEventListener("click",clicaPino)
@@ -157,6 +161,7 @@ function moveDisco(pinoOrigem,pinoDestino){
         jogadas++
         contador.innerText=jogadas
         if(pino3.childElementCount===maxDiscos){
+            Theme.pause()
             izi.play()
         }
     

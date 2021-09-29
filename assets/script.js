@@ -13,8 +13,8 @@ vitoria.setAttribute("src","./assets/img/helltaker-heart.gif")
 const erro = new Audio("./assets/sound/error.mp3")
 const izi = new Audio("./assets/sound/ggizi.mp3")
 const Theme = new Audio("./assets/sound/hellTakerOSTRemix.mp3")
-Theme.play()
-Theme.volume = 0.01;
+Theme.volume = 0.02;
+Theme.play();
 //Mateus
 const menu = document.querySelector("header");
 const Easy = document.createElement("button");
@@ -86,7 +86,7 @@ Clear.id = "Clear";
 Clear.innerText = "Reset";
 Clear.addEventListener("click",Reset);
 function Reset(){
-    Theme.play()
+
     ClearEvent()
     if(maxDiscos===5){
         HardEvent()
@@ -99,6 +99,7 @@ function Reset(){
     }
 }
 function ClearEvent () {
+    Theme.play()
     let count1 = pino1.childElementCount;
     let count2 = pino2.childElementCount;
     let count3 = pino3.childElementCount;

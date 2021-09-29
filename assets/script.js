@@ -2,9 +2,12 @@
 const pino1 = document.getElementById("pino1")
 const pino2 = document.getElementById("pino2")
 const pino3 = document.getElementById("pino3")
+let podeMover = true
+let maxDiscos = 7
 let selecionado = false
 let pinoAtual = pino1
-const erro = new Audio("./assets/error.mp3")
+const erro = new Audio("./assets/sound/error.mp3")
+const izi = new Audio("./assets/sound/ggizi.mp3")
 
 //Mateus
 const menu = document.querySelector("header");
@@ -24,6 +27,7 @@ Easy.addEventListener("click", EasyEvent)
         const disco3 = document.createElement("div");
         disco3.id = "disco3" ;
         pino1.appendChild(disco3);
+        maxDiscos = 3
     }
 const Medium = document.createElement("button");
 menu.appendChild(Medium);
@@ -44,6 +48,7 @@ Medium.addEventListener("click", MediumEvent)
         const disco4 = document.createElement("div");
         disco4.id = "disco4" ;
         pino1.appendChild(disco4);
+        maxDiscos = 4
     }
 const Hard = document.createElement("button");
 menu.appendChild(Hard);
@@ -67,6 +72,7 @@ Hard.addEventListener("click", HardEvent)
         const disco5 = document.createElement("div");
         disco5.id = "disco5" ;
         pino1.appendChild(disco5);
+        maxDiscos = 5
     }
 const Clear = document.createElement("button");
 menu.appendChild(Clear);
@@ -86,6 +92,7 @@ function ClearEvent () {
     for (let i=0; i< count3; i++){
         pino3.lastChild.remove()
     }
+    izi.pause()
 }
 
 //Erivan
@@ -95,23 +102,25 @@ pino3.addEventListener("click",clicaPino)
 
 function clicaPino (evt){
     const pino = evt.currentTarget
-    if(!selecionado){
-        if(pino.childElementCount>0){
-            pinoAtual=pino
-            selecionado = true
+    if(pino3.childElementCount!==maxDiscos){
+        if(!selecionado){
+            if(pino.childElementCount>0){
+                pinoAtual=pino
+                selecionado = true
+            }
+            else{
+                erro.play()
+            }
         }
         else{
-            erro.play()
-        }
-    }
-    else{
-        if(checaJogada(pinoAtual,pino)){
-            moveDisco(pinoAtual,pino)
-            selecionado = false
-        }
-        else{
-            selecionado = false
-            erro.play()
+            if(checaJogada(pinoAtual,pino)){
+                moveDisco(pinoAtual,pino)
+                selecionado = false
+            }
+            else{
+                selecionado = false
+                erro.play()
+            }
         }
     }
 
@@ -126,6 +135,11 @@ function checaJogada(pinoOrigem,pinoDestino){
     return false
 }
 function moveDisco(pinoOrigem,pinoDestino){
-    const disco = pinoOrigem.lastChild
-    pinoDestino.appendChild(disco)
+     
+        const disco = pinoOrigem.lastChild
+        pinoDestino.appendChild(disco)
+        if(pino3.childElementCount===maxDiscos){
+            izi.play()
+        }
+    
 }

@@ -2,10 +2,12 @@
 const pino1 = document.getElementById("pino1")
 const pino2 = document.getElementById("pino2")
 const pino3 = document.getElementById("pino3")
+const contador = document.getElementsByClassName("contador")[0]
 let podeMover = true
 let maxDiscos = 7
 let selecionado = false
-let pinoAtual = pino1
+let pinoAtual
+let jogadas = 0
 const erro = new Audio("./assets/sound/error.mp3")
 const izi = new Audio("./assets/sound/ggizi.mp3")
 
@@ -93,6 +95,8 @@ function ClearEvent () {
         pino3.lastChild.remove()
     }
     izi.pause()
+    jogadas = 0
+    contador.innerText=jogadas
 }
 
 //Erivan
@@ -138,6 +142,8 @@ function moveDisco(pinoOrigem,pinoDestino){
      
         const disco = pinoOrigem.lastChild
         pinoDestino.appendChild(disco)
+        jogadas++
+        contador.innerText=jogadas
         if(pino3.childElementCount===maxDiscos){
             izi.play()
         }

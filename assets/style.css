@@ -10,23 +10,24 @@ header {
     align-items: center;
     flex-wrap: wrap
 }
+.contador{
+    background-color: #fff;
+    text-align: center;
+    border: 1px solid #000;
+    padding: 5px;
+    box-sizing: content-box;
+    font-size: 12px;
+}
+.contador::before{
+    content: "Jogadas:"
+}
 button {
     width: 25px;
     height: 10px;
     box-sizing: content-box;
-}
-#Easy{
     font-size: 8px;
 }
-#Medium{
-    font-size: 8px;
-}
-#Hard{
-    font-size: 8px;
-}
-#Clear{
-    font-size: 8px;
-}
+
 h2{
     text-align: center;
     margin-top: 1em;
@@ -47,9 +48,11 @@ section{
     flex-direction: column-reverse;
     justify-content: flex-start;
     margin: 10px;
-    background-color: #eceae4;
     height: 100%;
     width: 100%;
+    background-image: linear-gradient(to left,transparent 47%, black 47%, black 53%, transparent 53%);
+    border: 1px dotted #666;
+    border-radius: 15px;
 }
 
 #disco1 {

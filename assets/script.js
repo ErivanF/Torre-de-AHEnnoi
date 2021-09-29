@@ -13,7 +13,7 @@ vitoria.setAttribute("src","./assets/img/helltaker-heart.gif")
 const erro = new Audio("./assets/sound/error.mp3")
 const izi = new Audio("./assets/sound/ggizi.mp3")
 const Theme = new Audio("./assets/sound/hellTakerOSTRemix.mp3")
-Theme.play()
+Theme.play();
 Theme.volume = 0.01;
 //Mateus
 const menu = document.querySelector("header");

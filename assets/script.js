@@ -4,7 +4,7 @@ const pino2 = document.getElementById("pino2")
 const pino3 = document.getElementById("pino3")
 const contador = document.getElementsByClassName("contador")[0]
 let podeMover = true
-let maxDiscos = 7
+let maxDiscos = 3
 let selecionado = false
 let pinoAtual
 let jogadas = 0
@@ -80,7 +80,19 @@ const Clear = document.createElement("button");
 menu.appendChild(Clear);
 Clear.id = "Clear";
 Clear.innerText = "Reset";
-Clear.addEventListener("click", ClearEvent);
+Clear.addEventListener("click",Reset);
+function Reset(){
+    ClearEvent()
+    if(maxDiscos===5){
+        HardEvent()
+    }
+    if(maxDiscos===4){
+        MediumEvent()
+    }
+    if(maxDiscos===3){
+        EasyEvent()
+    }
+}
 function ClearEvent () {
     let count1 = pino1.childElementCount;
     let count2 = pino2.childElementCount;

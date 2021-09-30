@@ -15,12 +15,14 @@ header {
     flex-wrap: wrap
 }
 .contador{
-    background-color: #fff;
+    background-color: black;
     text-align: center;
     border: 1px solid #000;
     padding: 5px;
     box-sizing: content-box;
     font-size: 12px;
+    border-radius: 25px;
+    color: red;
 }
 .contador::before{
     content: "Jogadas:"
@@ -30,6 +32,9 @@ button {
     height: 10px;
     box-sizing: content-box;
     font-size: 8px;
+    background-color: black;
+    color: red;
+    border-radius: 25px;
 }
 
 h2{
@@ -69,7 +74,7 @@ section{
 #disco1 {
     margin: 0 auto;
     border-radius: 15px;
-    width: 85%;
+    width: 90%;
     background: blue;
     height: 15%;
     background-image: url(./img/de7c14b166ce8cb065604b7957b4d01a.gif);
